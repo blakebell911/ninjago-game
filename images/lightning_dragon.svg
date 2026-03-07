@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 280" width="200" height="280">
+  <defs>
+    <linearGradient id="bglightning_dragon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b09000"/>
+      <stop offset="100%" stop-color="#605000"/>
+    </linearGradient>
+    <linearGradient id="shinelightning_dragon" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.18)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="280" fill="url(#bglightning_dragon)" rx="14"/>
+  <rect width="200" height="140" fill="url(#shinelightning_dragon)" rx="14"/>
+  <rect x="1" y="1" width="198" height="278" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2" rx="13"/>
+  <text x="100" y="130" font-size="90" text-anchor="middle" dominant-baseline="middle">🐉</text>
+  <rect x="0" y="185" width="200" height="95" fill="rgba(0,0,0,0.45)" rx="0"/>
+  <rect x="0" y="266" width="200" height="14" fill="rgba(0,0,0,0.45)" rx="0"/>
+  <rect x="0" y="185" width="200" height="15" fill="rgba(0,0,0,0.25)"/>
+  <text x="100" y="215" font-size="19" font-weight="bold" text-anchor="middle" fill="white" font-family="system-ui,sans-serif">Lightning Dragon</text>
+  <text x="100" y="238" font-size="12" text-anchor="middle" fill="rgba(255,255,255,0.72)" font-family="system-ui,sans-serif">Jay's Storm Dragon</text>
+</svg>

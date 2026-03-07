@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ninjago Battle Arena</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=27" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- TITLE SCREEN                                                            -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div id="screen-title" class="screen">
+    <canvas id="title-canvas" class="title-canvas"></canvas>
+    <div class="title-content">
+      <div class="title-eyebrow">⚔️ THE ULTIMATE BATTLE ⚔️</div>
+      <div class="title-logo">
+        <h1><span class="nl-fire">N</span><span class="nl-ice">I</span><span class="nl-lightning">N</span><span class="nl-earth">J</span><span class="nl-energy">A</span><span class="nl-water">G</span><span class="nl-golden">O</span></h1>
+        <div class="title-slash"></div>
+        <div class="subtitle">BATTLE ARENA</div>
+      </div>
+      <div class="title-elements">
+        <span class="elem-badge fire">🔥 Fire</span>
+        <span class="elem-badge ice">❄️ Ice</span>
+        <span class="elem-badge lightning">⚡ Lightning</span>
+        <span class="elem-badge earth">🪨 Earth</span>
+        <span class="elem-badge energy">✨ Energy</span>
+      </div>
+      <button id="btn-start" class="btn btn-primary btn-title">
+        ▶ START BATTLE
+      </button>
+      <div class="title-tagline">
+        <span class="tl-fire">🔥 Fire</span> ·
+        <span class="tl-ice">❄️ Ice</span> ·
+        <span class="tl-lightning">⚡ Lightning</span> ·
+        <span class="tl-earth">🪨 Earth</span> ·
+        <span class="tl-water">🌊 Water</span> ·
+        <span class="tl-wind">💨 Wind</span> ·
+        <span class="tl-energy">✨ Energy</span> ·
+        <span class="tl-darkness">💀 Darkness</span> ·
+        <span class="tl-venom">🐍 Venom</span> ·
+        <span class="tl-ghost">👻 Ghost</span> ·
+        <span class="tl-golden">⭐ Golden</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- PLAYER CHARACTER SELECT                                                 -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div id="screen-player-select" class="screen select-screen">
+    <div class="screen-header">
+      <h2>Choose Your Fighter</h2>
+    </div>
+    <div class="char-scroll">
+      <div id="player-char-grid"></div>
+    </div>
+    <div class="select-footer">
+      <button id="btn-back-title" class="btn btn-ghost">← Back</button>
+      <button id="btn-confirm-player" class="btn btn-primary" disabled>
+        Confirm Fighter →
+      </button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- OPPONENT SELECT                                                         -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div id="screen-opponent-select" class="screen select-screen">
+    <div class="screen-header">
+      <h2>Choose Your Opponent</h2>
+    </div>
+    <div class="char-scroll">
+      <div id="opponent-char-grid"></div>
+    </div>
+    <div class="select-footer">
+      <button id="btn-back-player" class="btn btn-ghost">← Back</button>
+      <button id="btn-random-opponent" class="btn btn-secondary">🎲 Random</button>
+      <button id="btn-confirm-opponent" class="btn btn-primary" disabled>
+        Fight! ⚔️
+      </button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- BATTLE SCREEN                                                           -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div id="screen-battle" class="screen">
+
+    <!-- HP Bars -->
+    <div class="battle-hpbars">
+      <div class="hp-block" id="player-hp-container">
+        <div class="hp-label">
+          <span class="fighter-hp-name" id="player-name">???</span>
+          <span class="fighter-hp-val" id="player-hp-text">100/100</span>
+        </div>
+        <div class="hp-track">
+          <div class="hp-fill" id="player-hp-bar" style="width:100%"></div>
+        </div>
+      </div>
+      <div style="font-size:0.8rem; color:#555; align-self:center; flex-shrink:0">VS</div>
+      <div class="hp-block" id="opp-hp-container">
+        <div class="hp-label">
+          <span class="fighter-hp-name" id="opp-name">???</span>
+          <span class="fighter-hp-val" id="opp-hp-text">100/100</span>
+        </div>
+        <div class="hp-track">
+          <div class="hp-fill" id="opp-hp-bar" style="width:100%"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Arena -->
+    <div class="battle-arena">
+      <!-- Player -->
+      <div class="fighter-panel" id="player-fighter">
+        <div class="fighter-icon">⚡</div>
+        <div class="fighter-name">Fighter</div>
+        <div class="fighter-element">Element</div>
+        <div class="fighter-status"></div>
+        <div class="fighter-charges">⚡⚡⚡</div>
+      </div>
+
+      <div class="vs-divider">VS</div>
+
+      <!-- Opponent -->
+      <div class="fighter-panel" id="opp-fighter">
+        <div class="fighter-icon">💀</div>
+        <div class="fighter-name">Opponent</div>
+        <div class="fighter-element">Element</div>
+        <div class="fighter-status"></div>
+        <div class="fighter-charges"></div>
+      </div>
+    </div>
+
+    <!-- Battle Log -->
+    <div class="battle-log-container">
+      <div id="battle-log">
+        <div class="log-entry log-info">Battle begins!</div>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="battle-actions">
+      <button class="move-btn move-btn-light" id="btn-move-light">
+        <span class="move-name">Light Attack</span>
+        <span class="move-desc">Quick strike</span>
+      </button>
+      <button class="move-btn move-btn-heavy" id="btn-move-heavy">
+        <span class="move-name">Heavy Attack</span>
+        <span class="move-desc">Powerful blow</span>
+      </button>
+      <button class="move-btn move-btn-special" id="btn-move-special">
+        <span class="move-name">Special</span>
+        <span class="move-desc">Elemental move</span>
+        <span class="move-charge-label" id="special-charge-cost">(0/3 ⚡)</span>
+      </button>
+      <button class="move-btn move-btn-defend" id="btn-move-defend">
+        <span class="move-name">Defend</span>
+        <span class="move-desc">Guard + charge</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- RESULT SCREEN                                                           -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div id="screen-result" class="screen">
+    <div class="result-icon" id="result-icon">🏆</div>
+    <h2 id="result-title">VICTORY!</h2>
+    <p id="result-subtitle">You won!</p>
+    <div class="result-buttons">
+      <button id="btn-rematch" class="btn btn-primary">⚔️ Rematch</button>
+      <button id="btn-new-battle" class="btn btn-secondary">🔄 New Battle</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- PREMIUM UNLOCK MODAL                                                    -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div id="premium-modal" class="modal-backdrop">
+    <div class="modal-box">
+      <div class="modal-lock">🔒</div>
+      <h2 class="modal-title">Premium Villains</h2>
+      <p class="modal-desc">Unlock all 5 villain characters — Lord Garmadon, Pythor, Morro, The Overlord &amp; Master Chen — with their devastating special abilities.</p>
+      <div class="modal-price">£2<span class="modal-price-sub">one-time unlock</span></div>
+      <div class="modal-perks">
+        <div class="modal-perk">💀 5 powerful villain fighters</div>
+        <div class="modal-perk">⚡ Unique special abilities</div>
+        <div class="modal-perk">🏆 Ultimate challenge mode</div>
+      </div>
+      <button id="btn-modal-unlock" class="btn btn-primary" style="width:100%; font-size:1.1rem; padding:16px;">
+        Unlock for £2
+      </button>
+      <button id="btn-modal-close" class="btn btn-ghost" style="width:100%; margin-top:8px;">
+        Maybe later
+      </button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- LEGENDARY £5 MODAL                                                      -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div id="mega-modal" class="modal-backdrop">
+    <div class="modal-box" style="border:2px solid #9b30ff; box-shadow:0 0 40px rgba(160,0,255,0.6);">
+      <div class="modal-lock">💎</div>
+      <h2 class="modal-title" style="background:linear-gradient(135deg,#cc00ff,#ffffff,#9b30ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Legendary Pack</h2>
+      <p class="modal-desc">Unlock 5 <strong>game-breaking</strong> legendary fighters — the most powerful beings in all of Ninjago.</p>
+      <div class="modal-price" style="background:linear-gradient(135deg,#4a0080,#9b30ff);color:#fff;">£5<span class="modal-price-sub" style="color:rgba(255,255,255,0.7);">one-time unlock</span></div>
+      <div class="modal-perks">
+        <div class="modal-perk">🌟 First Spinjitzu Master — 250 HP</div>
+        <div class="modal-perk">⭐ Golden Lloyd — 220 HP</div>
+        <div class="modal-perk">🐉 Overlord Dragon — 240 HP</div>
+        <div class="modal-perk">👹 Oni Garmadon — 230 HP</div>
+        <div class="modal-perk">⏳ Iron Doom Mech — 280 HP</div>
+      </div>
+      <button id="btn-mega-unlock" class="btn btn-primary" style="width:100%;font-size:1.1rem;padding:16px;background:linear-gradient(135deg,#6a00cc,#cc00ff);box-shadow:0 4px 20px rgba(160,0,255,0.5);">
+        💎 Unlock Legendary Pack — £5
+      </button>
+      <button id="btn-mega-close" class="btn btn-ghost" style="width:100%; margin-top:8px;">
+        Maybe later
+      </button>
+    </div>
+  </div>
+
+  <script src="js/characters.js?v=25"></script>
+  <script src="js/battle.js?v=25"></script>
+  <script src="js/effects.js?v=25"></script>
+  <script src="js/game.js?v=25"></script>
+</body>
+</html>
