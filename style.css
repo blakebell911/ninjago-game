@@ -1,6 +1,7 @@
 /* ─── BASE ─────────────────────────────────────────────────────────────────── */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { touch-action: manipulation; }
 
 :root {
   --bg-dark:    #070710;
