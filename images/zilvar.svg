@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 280" width="200" height="280">
+  <defs>
+    <linearGradient id="bgz" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#2a0850"/>
+      <stop offset="100%" stop-color="#0d0420"/>
+    </linearGradient>
+    <radialGradient id="glowz" cx="50%" cy="48%" r="50%">
+      <stop offset="0%" stop-color="#9933ff" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#100030" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bodyZ" x1="0" y1="0" x2="0.3" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#7c2adc"/>
+      <stop offset="100%" stop-color="#3a0878"/>
+    </linearGradient>
+    <linearGradient id="bellyZ" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#c86aff"/>
+      <stop offset="100%" stop-color="#8833cc"/>
+    </linearGradient>
+    <linearGradient id="wingZ" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#5c18a8"/>
+      <stop offset="100%" stop-color="#1e0540"/>
+    </linearGradient>
+    <linearGradient id="crystalZ" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#e0aaff"/>
+      <stop offset="100%" stop-color="#9933ff"/>
+    </linearGradient>
+  </defs>
+
+  <!-- card bg -->
+  <rect width="200" height="280" fill="url(#bgz)" rx="14"/>
+  <rect width="200" height="280" fill="url(#glowz)" rx="14"/>
+
+  <!-- bg crystal shards -->
+  <polygon points="20,40 28,10 34,40 28,36" fill="#8833ff" fill-opacity="0.20"/>
+  <polygon points="165,20 170,5  178,25 172,20" fill="#8833ff" fill-opacity="0.16"/>
+  <polygon points="10,140 18,115 24,140 18,136" fill="#8833ff" fill-opacity="0.12"/>
+  <polygon points="175,100 182,80 188,102 182,98" fill="#8833ff" fill-opacity="0.12"/>
+  <polygon points="40,200 45,185 52,202 46,199" fill="#8833ff" fill-opacity="0.10"/>
+
+  <!-- card border -->
+  <rect x="1" y="1" width="198" height="278" fill="none" stroke="#9944ff" stroke-opacity="0.55" stroke-width="2" rx="13"/>
+
+  <!-- ── DRAGON BODY ── -->
+
+  <!-- WINGS (behind body) -->
+  <!-- left wing -->
+  <path d="M60,115 Q20,85 8,55 Q30,70 50,90 Q42,75 48,60 Q60,80 62,100 Z" fill="url(#wingZ)" fill-opacity="0.90"/>
+  <!-- left wing membrane lines -->
+  <line x1="60" y1="115" x2="18" y2="58" stroke="#7020b0" stroke-width="1" stroke-opacity="0.55"/>
+  <line x1="60" y1="115" x2="38" y2="68" stroke="#7020b0" stroke-width="0.8" stroke-opacity="0.45"/>
+  <!-- right wing -->
+  <path d="M140,115 Q180,85 192,55 Q170,70 150,90 Q158,75 152,60 Q140,80 138,100 Z" fill="url(#wingZ)" fill-opacity="0.90"/>
+  <!-- right wing membrane lines -->
+  <line x1="140" y1="115" x2="182" y2="58" stroke="#7020b0" stroke-width="1" stroke-opacity="0.55"/>
+  <line x1="140" y1="115" x2="162" y2="68" stroke="#7020b0" stroke-width="0.8" stroke-opacity="0.45"/>
+
+  <!-- TAIL -->
+  <path d="M110,175 Q130,185 148,195 Q158,205 152,215 Q142,205 132,200 Q118,190 108,185 Z" fill="url(#bodyZ)"/>
+  <path d="M148,195 Q160,195 162,205 Q158,210 152,215 Q156,205 148,200 Z" fill="#5c18a8"/>
+
+  <!-- MAIN BODY -->
+  <ellipse cx="100" cy="150" rx="52" ry="55" fill="url(#bodyZ)"/>
+  <!-- body shadow left -->
+  <ellipse cx="76" cy="150" rx="18" ry="50" fill="#1e0540" fill-opacity="0.38"/>
+  <!-- body shadow right -->
+  <ellipse cx="124" cy="150" rx="18" ry="50" fill="#1e0540" fill-opacity="0.28"/>
+
+  <!-- BELLY SCALES -->
+  <ellipse cx="100" cy="158" rx="32" ry="36" fill="url(#bellyZ)" fill-opacity="0.70"/>
+  <!-- belly scale lines -->
+  <path d="M80,128 Q100,124 120,128" stroke="#c06aff" stroke-width="1" fill="none" stroke-opacity="0.55"/>
+  <path d="M76,138 Q100,133 124,138" stroke="#c06aff" stroke-width="0.9" fill="none" stroke-opacity="0.48"/>
+  <path d="M74,148 Q100,143 126,148" stroke="#c06aff" stroke-width="0.9" fill="none" stroke-opacity="0.42"/>
+  <path d="M75,158 Q100,153 125,158" stroke="#c06aff" stroke-width="0.8" fill="none" stroke-opacity="0.36"/>
+  <path d="M78,168 Q100,163 122,168" stroke="#c06aff" stroke-width="0.8" fill="none" stroke-opacity="0.30"/>
+
+  <!-- LEGS / CLAWS -->
+  <!-- left leg -->
+  <path d="M70,188 Q60,195 55,205 Q62,200 68,205 Q72,200 76,205 Q78,198 80,192 Z" fill="url(#bodyZ)"/>
+  <!-- left claws -->
+  <path d="M55,205 Q52,212 54,216" stroke="#c890ff" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M68,205 Q66,213 67,217" stroke="#c890ff" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M76,205 Q75,212 77,216" stroke="#c890ff" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- right leg -->
+  <path d="M130,188 Q140,195 145,205 Q138,200 132,205 Q128,200 124,205 Q122,198 120,192 Z" fill="url(#bodyZ)"/>
+  <!-- right claws -->
+  <path d="M145,205 Q148,212 146,216" stroke="#c890ff" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M132,205 Q134,213 133,217" stroke="#c890ff" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M124,205 Q125,212 123,216" stroke="#c890ff" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <!-- NECK -->
+  <path d="M85,105 Q88,95 100,92 Q112,95 115,105 L112,118 Q100,114 88,118 Z" fill="url(#bodyZ)"/>
+  <!-- neck scales -->
+  <path d="M88,110 Q100,106 112,110" stroke="#9944cc" stroke-width="1" fill="none" stroke-opacity="0.55"/>
+
+  <!-- HEAD -->
+  <ellipse cx="100" cy="82" rx="32" ry="28" fill="url(#bodyZ)"/>
+  <!-- head highlight -->
+  <ellipse cx="92" cy="72" rx="14" ry="10" fill="#9944dd" fill-opacity="0.40"/>
+  <!-- snout / muzzle -->
+  <path d="M80,90 Q100,100 120,90 Q114,96 100,98 Q86,96 80,90 Z" fill="#5c18a8"/>
+  <!-- nostril left -->
+  <ellipse cx="92" cy="93" rx="2.5" ry="1.5" fill="#3a0878"/>
+  <!-- nostril right -->
+  <ellipse cx="108" cy="93" rx="2.5" ry="1.5" fill="#3a0878"/>
+  <!-- mouth line -->
+  <path d="M82,90 Q100,96 118,90" stroke="#3a0878" stroke-width="1.5" fill="none"/>
+
+  <!-- EYES -->
+  <!-- left eye -->
+  <ellipse cx="86" cy="78" rx="8" ry="8" fill="#1a0030"/>
+  <ellipse cx="86" cy="78" rx="5" ry="6" fill="#cc44ff"/>
+  <ellipse cx="86" cy="78" rx="2.5" ry="3.5" fill="#0a0018"/>
+  <circle cx="88" cy="76" r="1.8" fill="white" fill-opacity="0.85"/>
+  <ellipse cx="86" cy="78" rx="8" ry="8" fill="none" stroke="#6600cc" stroke-width="1.2"/>
+  <!-- right eye -->
+  <ellipse cx="114" cy="78" rx="8" ry="8" fill="#1a0030"/>
+  <ellipse cx="114" cy="78" rx="5" ry="6" fill="#cc44ff"/>
+  <ellipse cx="114" cy="78" rx="2.5" ry="3.5" fill="#0a0018"/>
+  <circle cx="116" cy="76" r="1.8" fill="white" fill-opacity="0.85"/>
+  <ellipse cx="114" cy="78" rx="8" ry="8" fill="none" stroke="#6600cc" stroke-width="1.2"/>
+
+  <!-- HORNS / HEAD SPIKES -->
+  <!-- left horn -->
+  <path d="M80,62 Q72,44 76,35 Q80,48 84,58 Z" fill="url(#crystalZ)"/>
+  <!-- right horn -->
+  <path d="M120,62 Q128,44 124,35 Q120,48 116,58 Z" fill="url(#crystalZ)"/>
+  <!-- small head spikes -->
+  <path d="M90,56 Q88,46 91,40 Q93,48 94,54 Z" fill="#c06aff" fill-opacity="0.80"/>
+  <path d="M100,54 Q100,44 102,38 Q103,46 104,52 Z" fill="#c06aff" fill-opacity="0.80"/>
+  <path d="M110,56 Q112,46 109,40 Q107,48 106,54 Z" fill="#c06aff" fill-opacity="0.80"/>
+
+  <!-- CRYSTAL SHARD on chest (Zilvar motif) -->
+  <polygon points="100,120 94,132 100,138 106,132" fill="url(#crystalZ)" fill-opacity="0.90"/>
+  <polygon points="100,120 94,132 100,138 106,132" fill="none" stroke="#e0aaff" stroke-width="0.8" stroke-opacity="0.70"/>
+  <!-- crystal glow -->
+  <ellipse cx="100" cy="130" rx="10" ry="10" fill="#cc44ff" fill-opacity="0.18"/>
+
+  <!-- SPINE SPIKES (down back) -->
+  <polygon points="97,95  100,86  103,95"  fill="#9933ee" fill-opacity="0.80"/>
+  <polygon points="96,108 100,98  104,108" fill="#9933ee" fill-opacity="0.70"/>
+
+  <!-- ── INFO BAR ── -->
+  <rect x="0" y="220" width="200" height="60" fill="#000000" fill-opacity="0.65"/>
+  <rect x="0" y="220" width="200" height="3" fill="#9933ff" fill-opacity="0.70"/>
+  <!-- badge -->
+  <rect x="10" y="226" width="54" height="14" fill="#6600cc" fill-opacity="0.30" rx="7"/>
+  <text x="37" y="236" font-size="8" text-anchor="middle" fill="#cc88ff" font-family="sans-serif" font-weight="bold">Dragons Rising</text>
+  <!-- name -->
+  <text x="100" y="252" font-size="20" font-weight="bold" text-anchor="middle" fill="white" font-family="sans-serif">Zilvar</text>
+  <!-- tagline -->
+  <text x="100" y="270" font-size="11" text-anchor="middle" fill="#cc88ff" fill-opacity="0.88" font-family="sans-serif">Crystal Dragon</text>
+</svg>

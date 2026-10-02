@@ -117,7 +117,7 @@ const CHARACTERS = [
     ),
   },
   {
-    id: 'jay', image: 'images/jay.png', name: 'Jay', group: 'ninja',
+    id: 'jay', image: 'images/jay.svg', name: 'Jay', group: 'ninja',
     element: 'lightning', hp: 105, attack: 23, defense: 13, speed: 19,
     tagline: 'Ninja of Lightning',
     moves: buildMoves(
@@ -809,6 +809,17 @@ const CHARACTERS = [
       { name: 'Twig Strike',    desc: 'Dozens of tiny warriors swarm!', power: 1.0 },
       { name: 'Forest Ambush',  desc: 'Attack from the treetops!',      power: 1.6 },
       { name: 'Treewok Rush',   desc: 'The whole forest rises up!',     power: 2.1, effect: 'bind', effectChance: 0.8 }
+    ),
+  },
+
+  {
+    id: 'zilvar', image: 'images/zilvar.svg', name: 'Zilvar', group: 'dragons_rising',
+    element: 'crystal', hp: 140, attack: 28, defense: 16, speed: 21,
+    tagline: 'Crystal Dragon of Dragons Rising',
+    moves: buildMoves(
+      { name: 'Crystal Slash',  desc: 'Razor-sharp crystal strike',        power: 1.0 },
+      { name: 'Shard Volley',   desc: 'Fires a hail of crystal shards',    power: 1.7 },
+      { name: 'Prism Burst',    desc: 'Shatters reality with pure crystal!', power: 2.4, effect: 'stun', effectChance: 0.80 }
     ),
   },
 
