@@ -22,8 +22,8 @@ let battle = null;
 let aiTimer = null;
 
 // Premium unlock state (session only)
-let unlockedPremium = false;
-let unlockedMega = false;
+let unlockedPremium = true;
+let unlockedMega = true;
 
 // ─── SCREEN MANAGEMENT ────────────────────────────────────────────────────────
 
@@ -67,9 +67,9 @@ function buildCharacterGrid(containerId, onSelect, excludeId = null) {
 
       el.innerHTML = `
         ${isMegaLocked
-          ? `<div class="char-mega-banner"><span class="char-mega-banner-lock">💎</span><span class="char-mega-banner-text">£5 LEGENDARY</span></div>`
+          ? `<div class="char-mega-banner"><span class="char-mega-banner-lock">💎</span><span class="char-mega-banner-text">£2 LEGENDARY</span></div>`
           : isLocked
-          ? `<div class="char-price-banner"><span class="char-price-banner-lock">🔒</span><span class="char-price-banner-text">£2 PREMIUM</span></div>`
+          ? `<div class="char-price-banner"><span class="char-price-banner-lock">🔒</span><span class="char-price-banner-text">£10 PREMIUM</span></div>`
           : ''}
         <div class="char-img-wrap" style="${isLocked ? 'border-radius:0 0 0 0;' : ''}">
           <img class="char-img" src="${char.image}" alt="${char.name}" draggable="false"${isLocked ? ` style="filter:grayscale(0.8) brightness(${isMegaLocked ? '0.35' : '0.45'})"` : ''}>
