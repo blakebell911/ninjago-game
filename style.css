@@ -83,21 +83,35 @@ html, body {
 }
 
 .title-logo h1 {
-  font-family: var(--font-title);
-  font-size: clamp(4rem, 14vw, 8rem);
+  font-family: 'Black Ops One', 'Impact', sans-serif;
+  font-size: clamp(3.5rem, 13vw, 7.5rem);
   font-weight: 400;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
-  line-height: 0.9;
+  line-height: 1.1;
+  padding: 0 0.15em;
+  transform: rotate(-4deg);
   animation: titlePulse 3s ease-in-out infinite;
 }
-.nl-fire    { color: #ff7040; text-shadow: 0 0 30px #e84c1b, 0 4px 2px rgba(0,0,0,0.8); }
-.nl-ice     { color: #a0e8ff; text-shadow: 0 0 30px #5bc8f5, 0 4px 2px rgba(0,0,0,0.8); }
-.nl-lightning{ color: #ffe566; text-shadow: 0 0 30px #f5d020, 0 4px 2px rgba(0,0,0,0.8); }
-.nl-earth   { color: #8dc96b; text-shadow: 0 0 30px #5c8a3c, 0 4px 2px rgba(0,0,0,0.8); }
-.nl-energy  { color: #d8a0ff; text-shadow: 0 0 30px #7b2fbe, 0 4px 2px rgba(0,0,0,0.8); }
-.nl-water   { color: #4fb3f9; text-shadow: 0 0 30px #1e7fcb, 0 4px 2px rgba(0,0,0,0.8); }
-.nl-golden  { color: #ffe566; text-shadow: 0 0 30px #c9900c, 0 4px 2px rgba(0,0,0,0.8); }
+/* 3D extrusion: stacked shadows in a darker shade of each letter's color */
+.title-logo h1 span {
+  display: inline-block;
+  color: var(--c);
+  text-shadow:
+    0 0 2px #fff8,
+    1px 1px 0 var(--d), 2px 2px 0 var(--d), 3px 3px 0 var(--d),
+    4px 4px 0 var(--d), 5px 5px 0 var(--d), 6px 6px 0 var(--d),
+    7px 7px 0 #000a,
+    10px 12px 14px rgba(0,0,0,0.8),
+    0 0 30px var(--g);
+}
+.nl-fire     { --c: #ff7040; --d: #8a2a0c; --g: #e84c1b; }
+.nl-ice      { --c: #a0e8ff; --d: #2a6f8f; --g: #5bc8f5; }
+.nl-lightning{ --c: #ffe566; --d: #8a6f00; --g: #f5d020; }
+.nl-earth    { --c: #8dc96b; --d: #355222; --g: #5c8a3c; }
+.nl-energy   { --c: #d8a0ff; --d: #4a1a75; --g: #7b2fbe; }
+.nl-water    { --c: #4fb3f9; --d: #0f4a78; --g: #1e7fcb; }
+.nl-golden   { --c: #ffe566; --d: #7a5206; --g: #c9900c; }
 
 .title-slash {
   width: 80%;

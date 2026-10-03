@@ -470,12 +470,17 @@ document.addEventListener('DOMContentLoaded', () => {
 // ─── 3D CARD TILT ─────────────────────────────────────────────────────────────
 
 function apply3DTilt(el) {
+  let tiltRaf = null;
   el.addEventListener('mousemove', (e) => {
-    const r = el.getBoundingClientRect();
-    const x = (e.clientX - r.left) / r.width  - 0.5;
-    const y = (e.clientY - r.top)  / r.height - 0.5;
-    el.style.transform = `perspective(700px) rotateY(${x * 18}deg) rotateX(${-y * 14}deg) translateZ(8px) scale(1.03)`;
-    el.style.transition = 'transform 0.05s, border-color 0.2s, box-shadow 0.2s';
+    if (tiltRaf) return;
+    tiltRaf = requestAnimationFrame(() => {
+      tiltRaf = null;
+      const r = el.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width  - 0.5;
+      const y = (e.clientY - r.top)  / r.height - 0.5;
+      el.style.transform = `perspective(700px) rotateY(${x * 18}deg) rotateX(${-y * 14}deg) translateZ(8px) scale(1.03)`;
+      el.style.transition = 'transform 0.05s, border-color 0.2s, box-shadow 0.2s';
+    });
   });
   el.addEventListener('mouseleave', () => {
     el.style.transform = '';
@@ -498,7 +503,7 @@ function initTitleParticles() {
   window.addEventListener('resize', resize);
 
   const COLORS = ['#f0c040','#e84c1b','#5bc8f5','#f5d020','#c77dff','#26c281'];
-  const particles = Array.from({length: 60}, () => ({
+  const particles = Array.from({length: 25}, () => ({
     x: Math.random(), y: Math.random() + 0.5,
     vx: (Math.random() - 0.5) * 0.0004,
     vy: -(Math.random() * 0.0006 + 0.0002),
