@@ -1,198 +1,242 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 280" width="200" height="280">
   <defs>
     <linearGradient id="bgz" x1="0" y1="0" x2="0.3" y2="1" gradientUnits="objectBoundingBox">
-      <stop offset="0%" stop-color="#1a1f40"/>
-      <stop offset="100%" stop-color="#05060f"/>
+      <stop offset="0%" stop-color="#161a3a"/>
+      <stop offset="100%" stop-color="#06080f"/>
     </linearGradient>
     <radialGradient id="bgGlow" cx="50%" cy="40%" r="55%">
-      <stop offset="0%" stop-color="#2a3060" stop-opacity="0.60"/>
-      <stop offset="100%" stop-color="#05060f" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#242a5a" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#06080f" stop-opacity="0"/>
     </radialGradient>
-    <!-- head base: off-white with slight warm grey -->
-    <linearGradient id="headG" x1="0.2" y1="0" x2="0.8" y2="1" gradientUnits="objectBoundingBox">
-      <stop offset="0%" stop-color="#f0ece8"/>
-      <stop offset="55%" stop-color="#d8d0c8"/>
-      <stop offset="100%" stop-color="#a89888"/>
+    <!-- Head base: white with cool grey shading -->
+    <linearGradient id="headG" x1="0.2" y1="0" x2="0.85" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#eeeae6"/>
+      <stop offset="55%" stop-color="#d4cec8"/>
+      <stop offset="100%" stop-color="#a8a09a"/>
     </linearGradient>
-    <radialGradient id="headLit" cx="42%" cy="28%" r="58%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.65"/>
-      <stop offset="100%" stop-color="#e0d8d0" stop-opacity="0"/>
+    <radialGradient id="headLit" cx="40%" cy="25%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.60"/>
+      <stop offset="100%" stop-color="#e0dada" stop-opacity="0"/>
     </radialGradient>
-    <!-- mane / textured top -->
-    <linearGradient id="maneG" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
-      <stop offset="0%" stop-color="#ddd8d0"/>
-      <stop offset="100%" stop-color="#b0a898"/>
+    <!-- Neck / chin -->
+    <linearGradient id="neckG" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#d8d4ce"/>
+      <stop offset="100%" stop-color="#a8a29c"/>
     </linearGradient>
-    <!-- armour steel -->
-    <linearGradient id="steelG" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
-      <stop offset="0%" stop-color="#c0c8d4"/>
-      <stop offset="100%" stop-color="#606878"/>
+    <!-- Steel shoulder armour -->
+    <linearGradient id="steelG" x1="0" y1="0" x2="0.2" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#c2cad6"/>
+      <stop offset="100%" stop-color="#626a7a"/>
     </linearGradient>
-    <!-- gold -->
+    <!-- Chest armour dark base -->
+    <linearGradient id="chestDark" x1="0" y1="0" x2="0.1" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#1a1e28"/>
+      <stop offset="100%" stop-color="#0c0e16"/>
+    </linearGradient>
+    <!-- Chest plate panels -->
+    <linearGradient id="plateG" x1="0" y1="0" x2="0.3" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#909aaa"/>
+      <stop offset="100%" stop-color="#545e6e"/>
+    </linearGradient>
+    <!-- Gold accents -->
     <linearGradient id="goldG" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
       <stop offset="0%" stop-color="#e8c040"/>
-      <stop offset="100%" stop-color="#a06808"/>
-    </linearGradient>
-    <!-- chest armour plate -->
-    <linearGradient id="chestG" x1="0" y1="0" x2="0.2" y2="1" gradientUnits="objectBoundingBox">
-      <stop offset="0%" stop-color="#9098a8"/>
-      <stop offset="100%" stop-color="#404858"/>
+      <stop offset="100%" stop-color="#9a6808"/>
     </linearGradient>
   </defs>
 
-  <!-- ── BACKGROUND (night blue, matching show) ── -->
+  <!-- ── BACKGROUND ── -->
   <rect width="200" height="280" fill="url(#bgz)" rx="14"/>
   <rect width="200" height="280" fill="url(#bgGlow)" rx="14"/>
-  <!-- distant light/city glow hints -->
-  <ellipse cx="160" cy="195" rx="25" ry="12" fill="#c06020" fill-opacity="0.12"/>
-  <ellipse cx="40"  cy="200" rx="18" ry="9"  fill="#c06020" fill-opacity="0.08"/>
-
+  <!-- distant purple/blue city glow -->
+  <ellipse cx="155" cy="195" rx="28" ry="12" fill="#5050c0" fill-opacity="0.10"/>
+  <ellipse cx="42"  cy="202" rx="20" ry="9"  fill="#5050c0" fill-opacity="0.07"/>
+  <!-- warm lantern dots far back -->
+  <circle cx="168" cy="180" r="3" fill="#d06820" fill-opacity="0.45"/>
+  <circle cx="30"  cy="186" r="2" fill="#d06820" fill-opacity="0.38"/>
   <!-- card border -->
-  <rect x="1" y="1" width="198" height="278" fill="none" stroke="#8090b8" stroke-opacity="0.50" stroke-width="2" rx="13"/>
+  <rect x="1" y="1" width="198" height="278" fill="none" stroke="#8090b0" stroke-opacity="0.50" stroke-width="2" rx="13"/>
 
-  <!-- ── CAPE (black, behind everything) ── -->
-  <path d="M0,220 L0,185 Q15,162 40,155 L70,148 Q85,145 100,145 Q115,145 130,148 L160,155 Q185,162 200,185 L200,220 Z"
-        fill="#141418"/>
+  <!-- ── CAPE (behind everything) ── -->
+  <path d="M0,222 L0,186 Q16,164 42,156 L70,149 Q85,146 100,146 Q115,146 130,149 L158,156 Q184,164 200,186 L200,222 Z"
+        fill="#111116"/>
   <!-- cape fold lines -->
-  <path d="M42,158 Q50,170 48,200" stroke="#2a2a32" stroke-width="2" fill="none" stroke-opacity="0.70"/>
-  <path d="M158,158 Q150,170 152,200" stroke="#2a2a32" stroke-width="2" fill="none" stroke-opacity="0.70"/>
-  <path d="M60,150 Q65,168 62,200" stroke="#2a2a32" stroke-width="1.5" fill="none" stroke-opacity="0.55"/>
-  <path d="M140,150 Q135,168 138,200" stroke="#2a2a32" stroke-width="1.5" fill="none" stroke-opacity="0.55"/>
+  <path d="M44,160 Q48,178 46,210" stroke="#1e1e26" stroke-width="2" fill="none" stroke-opacity="0.65"/>
+  <path d="M156,160 Q152,178 154,210" stroke="#1e1e26" stroke-width="2" fill="none" stroke-opacity="0.65"/>
+  <path d="M62,152 Q64,172 62,210" stroke="#1e1e26" stroke-width="1.4" fill="none" stroke-opacity="0.50"/>
+  <path d="M138,152 Q136,172 138,210" stroke="#1e1e26" stroke-width="1.4" fill="none" stroke-opacity="0.50"/>
 
   <!-- ── SHOULDER ARMOUR ── -->
-  <!-- left shoulder -->
-  <path d="M40,155 Q26,148 20,138 Q28,136 36,142 L48,152 Z" fill="url(#steelG)"/>
-  <path d="M20,138 Q14,128 18,120 Q24,130 28,138 Z" fill="#505868"/>
-  <circle cx="24" cy="134" r="5" fill="#808898"/>
-  <circle cx="24" cy="134" r="3" fill="#606070"/>
-  <!-- left shoulder gold bolt -->
-  <circle cx="36" cy="142" r="3.5" fill="url(#goldG)"/>
-  <!-- right shoulder -->
-  <path d="M160,155 Q174,148 180,138 Q172,136 164,142 L152,152 Z" fill="url(#steelG)"/>
-  <path d="M180,138 Q186,128 182,120 Q176,130 172,138 Z" fill="#505868"/>
-  <circle cx="176" cy="134" r="5" fill="#808898"/>
-  <circle cx="176" cy="134" r="3" fill="#606070"/>
-  <circle cx="164" cy="142" r="3.5" fill="url(#goldG)"/>
+  <!-- left pauldron -->
+  <path d="M42,156 Q26,148 18,136 Q28,134 38,142 L50,154 Z" fill="url(#steelG)"/>
+  <path d="M18,136 Q12,126 16,118 Q22,128 26,136 Z" fill="#505868"/>
+  <!-- left bolt joint -->
+  <circle cx="24" cy="133" r="7" fill="#787e8e"/>
+  <circle cx="24" cy="133" r="5" fill="#585e6c"/>
+  <circle cx="24" cy="133" r="2" fill="#9098a8"/>
+  <circle cx="38" cy="143" r="4"  fill="url(#goldG)"/>
+  <circle cx="38" cy="143" r="2"  fill="#e8d070"/>
+  <!-- right pauldron -->
+  <path d="M158,156 Q174,148 182,136 Q172,134 162,142 L150,154 Z" fill="url(#steelG)"/>
+  <path d="M182,136 Q188,126 184,118 Q178,128 174,136 Z" fill="#505868"/>
+  <!-- right bolt joint -->
+  <circle cx="176" cy="133" r="7" fill="#787e8e"/>
+  <circle cx="176" cy="133" r="5" fill="#585e6c"/>
+  <circle cx="176" cy="133" r="2" fill="#9098a8"/>
+  <circle cx="162" cy="143" r="4"  fill="url(#goldG)"/>
+  <circle cx="162" cy="143" r="2"  fill="#e8d070"/>
 
-  <!-- ── CHEST ARMOUR PLATE ── -->
-  <path d="M70,148 Q78,138 100,135 Q122,138 130,148 L126,168 Q118,162 100,160 Q82,162 74,168 Z"
-        fill="url(#chestG)"/>
-  <!-- chest plate detail lines -->
-  <path d="M84,140 Q100,136 116,140 Q110,148 100,150 Q90,148 84,140 Z" fill="#303848" fill-opacity="0.55"/>
-  <!-- gold accents on chest -->
-  <polygon points="100,138 96,144 100,148 104,144" fill="url(#goldG)" fill-opacity="0.90"/>
-  <polygon points="88,142 85,146 88,150 91,146"    fill="url(#goldG)" fill-opacity="0.70"/>
-  <polygon points="112,142 109,146 112,150 115,146" fill="url(#goldG)" fill-opacity="0.70"/>
-  <!-- scroll/rune pattern lines on chest -->
-  <path d="M82,153 Q100,158 118,153" stroke="#606878" stroke-width="1" fill="none" stroke-opacity="0.60"/>
-  <path d="M80,158 Q100,163 120,158" stroke="#606878" stroke-width="0.8" fill="none" stroke-opacity="0.45"/>
+  <!-- ── CHEST BREASTPLATE ── -->
+  <!-- dark background of chest armour -->
+  <path d="M66,149 Q78,140 100,137 Q122,140 134,149 L130,175 Q118,195 100,200 Q82,195 70,175 Z"
+        fill="url(#chestDark)"/>
+  <!-- outer frame border -->
+  <path d="M66,149 Q78,140 100,137 Q122,140 134,149 L130,175 Q118,195 100,200 Q82,195 70,175 Z"
+        fill="none" stroke="#6878a0" stroke-width="1.5" stroke-opacity="0.70"/>
 
-  <!-- ── NECK (white, connecting head to armour) ── -->
-  <path d="M82,142 Q84,148 84,154 L116,154 Q116,148 118,142 Q109,138 100,137 Q91,138 82,142 Z"
-        fill="url(#headG)"/>
-  <!-- neck chin-tuft / beard lower extension -->
-  <path d="M88,142 Q100,150 112,142 Q106,156 100,158 Q94,156 88,142 Z" fill="#d0c8be" fill-opacity="0.70"/>
+  <!-- left chest plate panels -->
+  <path d="M70,152 Q80,146 94,145 L90,162 Q80,162 70,168 Z" fill="url(#plateG)"/>
+  <path d="M70,168 Q80,162 90,162 L86,180 Q76,182 68,178 Z" fill="url(#plateG)" fill-opacity="0.80"/>
+  <!-- right chest plate panels (mirror) -->
+  <path d="M130,152 Q120,146 106,145 L110,162 Q120,162 130,168 Z" fill="url(#plateG)"/>
+  <path d="M130,168 Q120,162 110,162 L114,180 Q124,182 132,178 Z" fill="url(#plateG)" fill-opacity="0.80"/>
+  <!-- centre v-plate -->
+  <path d="M94,145 Q100,142 106,145 L112,164 Q106,172 100,174 Q94,172 88,164 Z" fill="url(#plateG)"/>
+  <!-- inner panel scroll line -->
+  <path d="M94,150 Q100,148 106,150 Q104,160 100,163 Q96,160 94,150 Z" fill="#3a4258" fill-opacity="0.60"/>
 
-  <!-- ── HEAD ── -->
-  <!-- head shadow -->
-  <ellipse cx="100" cy="88" rx="60" ry="64" fill="#000010" fill-opacity="0.40"/>
-  <!-- main head block — wide, squared lion face -->
-  <rect x="44" y="34" width="112" height="106" fill="url(#headG)" rx="18"/>
-  <rect x="44" y="34" width="112" height="106" fill="url(#headLit)" rx="18"/>
-  <!-- side shadows (3-D rounding) -->
-  <rect x="44" y="34" width="22" height="106" fill="#a09080" fill-opacity="0.28" rx="18"/>
-  <rect x="134" y="34" width="22" height="106" fill="#a09080" fill-opacity="0.20" rx="18"/>
+  <!-- Gold accent pieces on chest -->
+  <polygon points="84,148 80,153 84,157 88,153" fill="url(#goldG)"/>
+  <polygon points="116,148 112,153 116,157 120,153" fill="url(#goldG)"/>
+  <polygon points="76,164 72,169 76,173 80,169" fill="url(#goldG)" fill-opacity="0.85"/>
+  <polygon points="124,164 120,169 124,173 128,169" fill="url(#goldG)" fill-opacity="0.85"/>
+  <polygon points="84,178 80,183 84,187 88,183" fill="url(#goldG)" fill-opacity="0.75"/>
+  <polygon points="116,178 112,183 116,187 120,183" fill="url(#goldG)" fill-opacity="0.75"/>
+  <!-- centre bottom gold -->
+  <polygon points="100,176 96,181 100,186 104,181" fill="url(#goldG)"/>
+  <!-- panel gap lines -->
+  <line x1="94" y1="145" x2="90" y2="180" stroke="#2a3050" stroke-width="1.2" stroke-opacity="0.65"/>
+  <line x1="106" y1="145" x2="110" y2="180" stroke="#2a3050" stroke-width="1.2" stroke-opacity="0.65"/>
+
+  <!-- ── NECK — thick white column ── -->
+  <path d="M82,142 L82,158 Q84,164 100,166 Q116,164 118,158 L118,142 Q110,138 100,137 Q90,138 82,142 Z"
+        fill="url(#neckG)"/>
+  <!-- neck coil/wrap lines -->
+  <path d="M83,146 Q100,150 117,146" stroke="#b0a8a2" stroke-width="1.2" fill="none" stroke-opacity="0.60"/>
+  <path d="M82,152 Q100,156 118,152" stroke="#b0a8a2" stroke-width="1.0" fill="none" stroke-opacity="0.50"/>
+  <path d="M83,158 Q100,162 117,158" stroke="#b0a8a2" stroke-width="0.9" fill="none" stroke-opacity="0.40"/>
+
+  <!-- ── HEAD — wide boxy LEGO beast face ── -->
+  <!-- head drop shadow -->
+  <ellipse cx="100" cy="88" rx="64" ry="58" fill="#000010" fill-opacity="0.38"/>
+  <!-- main head block -->
+  <rect x="36" y="28" width="128" height="114" fill="url(#headG)" rx="16"/>
+  <rect x="36" y="28" width="128" height="114" fill="url(#headLit)" rx="16"/>
+  <!-- head side panel lines (faceted stone look) -->
+  <path d="M36,60 Q50,56 60,64"   stroke="#b0a8a2" stroke-width="1.2" fill="none" stroke-opacity="0.40"/>
+  <path d="M164,60 Q150,56 140,64" stroke="#b0a8a2" stroke-width="1.2" fill="none" stroke-opacity="0.40"/>
+  <path d="M36,90 Q50,88 60,92"   stroke="#b8b0a8" stroke-width="1.0" fill="none" stroke-opacity="0.35"/>
+  <path d="M164,90 Q150,88 140,92" stroke="#b8b0a8" stroke-width="1.0" fill="none" stroke-opacity="0.35"/>
+  <!-- head top ridge line -->
+  <path d="M60,30 Q100,26 140,30" stroke="#c8c0ba" stroke-width="1.5" fill="none" stroke-opacity="0.45"/>
+  <!-- side shadow panels (3D rounding) -->
+  <rect x="36" y="28" width="22" height="114" fill="#a09898" fill-opacity="0.24" rx="16"/>
+  <rect x="142" y="28" width="22" height="114" fill="#a09898" fill-opacity="0.18" rx="16"/>
   <!-- bottom chin shadow -->
-  <ellipse cx="100" cy="138" rx="38" ry="8" fill="#604820" fill-opacity="0.25"/>
+  <ellipse cx="100" cy="140" rx="44" ry="8" fill="#6a5040" fill-opacity="0.22"/>
 
-  <!-- ── MANE / CROWN TEXTURE (lumpy top of head, like LEGO lion head piece) ── -->
-  <!-- series of raised bumps along crown -->
-  <ellipse cx="72"  cy="40" rx="14" ry="10" fill="url(#maneG)"/>
-  <ellipse cx="88"  cy="34" rx="13" ry="10" fill="url(#maneG)"/>
-  <ellipse cx="100" cy="32" rx="12" ry="10" fill="url(#maneG)"/>
-  <ellipse cx="112" cy="34" rx="13" ry="10" fill="url(#maneG)"/>
-  <ellipse cx="128" cy="40" rx="14" ry="10" fill="url(#maneG)"/>
-  <!-- mane side tufts -->
-  <ellipse cx="50"  cy="52" rx="10" ry="14" fill="url(#maneG)"/>
-  <ellipse cx="150" cy="52" rx="10" ry="14" fill="url(#maneG)"/>
-  <!-- inner mane detail lines for texture -->
-  <path d="M72,34 Q72,42 72,50"   stroke="#c0b8ae" stroke-width="1.2" fill="none" stroke-opacity="0.50"/>
-  <path d="M88,28 Q88,36 88,46"   stroke="#c0b8ae" stroke-width="1.2" fill="none" stroke-opacity="0.45"/>
-  <path d="M100,26 Q100,34 100,44" stroke="#c0b8ae" stroke-width="1.2" fill="none" stroke-opacity="0.45"/>
-  <path d="M112,28 Q112,36 112,46" stroke="#c0b8ae" stroke-width="1.2" fill="none" stroke-opacity="0.45"/>
-  <path d="M128,34 Q128,42 128,50" stroke="#c0b8ae" stroke-width="1.2" fill="none" stroke-opacity="0.50"/>
+  <!-- ── CROWN / MANE TEXTURE — angular rocky top ── -->
+  <ellipse cx="72"  cy="34" rx="16" ry="11" fill="#d8d2cc"/>
+  <ellipse cx="88"  cy="28" rx="15" ry="11" fill="#dcd8d2"/>
+  <ellipse cx="100" cy="26" rx="14" ry="11" fill="#dcd8d2"/>
+  <ellipse cx="112" cy="28" rx="15" ry="11" fill="#dcd8d2"/>
+  <ellipse cx="128" cy="34" rx="16" ry="11" fill="#d8d2cc"/>
+  <!-- side mane tufts -->
+  <ellipse cx="44"  cy="48" rx="11" ry="16" fill="#cec8c2"/>
+  <ellipse cx="156" cy="48" rx="11" ry="16" fill="#cec8c2"/>
+  <!-- crown crease detail -->
+  <path d="M72,28 Q72,38 72,50"   stroke="#b8b0a8" stroke-width="1.2" fill="none" stroke-opacity="0.45"/>
+  <path d="M88,22 Q88,32 88,44"   stroke="#b8b0a8" stroke-width="1.2" fill="none" stroke-opacity="0.42"/>
+  <path d="M100,20 Q100,30 100,42" stroke="#b8b0a8" stroke-width="1.2" fill="none" stroke-opacity="0.42"/>
+  <path d="M112,22 Q112,32 112,44" stroke="#b8b0a8" stroke-width="1.2" fill="none" stroke-opacity="0.42"/>
+  <path d="M128,28 Q128,38 128,50" stroke="#b8b0a8" stroke-width="1.2" fill="none" stroke-opacity="0.45"/>
 
-  <!-- ── FLAME MARKINGS on forehead (dark red/crimson) ── -->
-  <!-- central flame cluster -->
-  <path d="M100,46 Q97,38 100,33 Q103,38 100,46 Z" fill="#7a1010"/>
-  <path d="M94,50 Q90,40 93,35 Q96,42 94,50 Z"    fill="#7a1010"/>
-  <path d="M106,50 Q110,40 107,35 Q104,42 106,50 Z" fill="#7a1010"/>
-  <path d="M88,52 Q84,44 87,40 Q90,46 88,52 Z"     fill="#7a1010" fill-opacity="0.80"/>
-  <path d="M112,52 Q116,44 113,40 Q110,46 112,52 Z" fill="#7a1010" fill-opacity="0.80"/>
-  <!-- flame tips highlight -->
-  <path d="M100,44 Q99,38 100,34 Q101,38 100,44 Z" fill="#c03030" fill-opacity="0.55"/>
-  <path d="M94,48 Q92,41 93,37 Q95,42 94,48 Z"    fill="#c03030" fill-opacity="0.40"/>
-  <path d="M106,48 Q108,41 107,37 Q105,42 106,48 Z" fill="#c03030" fill-opacity="0.40"/>
+  <!-- ── FLAME MARKINGS on forehead (dark red/crimson flame shapes) ── -->
+  <!-- Central flame burst -->
+  <path d="M100,44 Q96,34 100,27 Q104,34 100,44 Z" fill="#8a1010"/>
+  <path d="M100,42 Q97,34 100,29 Q103,34 100,42 Z" fill="#c02828" fill-opacity="0.55"/>
+  <!-- Left flame group -->
+  <path d="M88,48 Q83,36 86,30 Q90,38 88,48 Z" fill="#8a1010"/>
+  <path d="M88,46 Q84,37 86,32 Q89,39 88,46 Z" fill="#c02828" fill-opacity="0.50"/>
+  <path d="M80,50 Q76,40 79,36 Q82,43 80,50 Z" fill="#8a1010" fill-opacity="0.85"/>
+  <!-- Right flame group -->
+  <path d="M112,48 Q117,36 114,30 Q110,38 112,48 Z" fill="#8a1010"/>
+  <path d="M112,46 Q116,37 114,32 Q111,39 112,46 Z" fill="#c02828" fill-opacity="0.50"/>
+  <path d="M120,50 Q124,40 121,36 Q118,43 120,50 Z" fill="#8a1010" fill-opacity="0.85"/>
 
-  <!-- ── EYE MARKINGS (dark red war-paint slashes) ── -->
-  <!-- left eye upper marks -->
-  <path d="M64,72 Q70,66 78,68" stroke="#7a1010" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-  <path d="M62,79 Q68,74 76,76" stroke="#7a1010" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-  <!-- left lower slash -->
-  <path d="M65,88 Q70,84 78,85" stroke="#7a1010" stroke-width="2"   fill="none" stroke-linecap="round"/>
-  <!-- right eye upper marks -->
-  <path d="M136,72 Q130,66 122,68" stroke="#7a1010" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-  <path d="M138,79 Q132,74 124,76" stroke="#7a1010" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-  <!-- right lower slash -->
-  <path d="M135,88 Q130,84 122,85" stroke="#7a1010" stroke-width="2"   fill="none" stroke-linecap="round"/>
+  <!-- ── EYE MARKINGS — dark red angry slashes ── -->
+  <!-- left upper eyebrow slash (thick, curved, angry) -->
+  <path d="M58,70 Q66,62 78,65" stroke="#8a1010" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M56,78 Q63,72 74,74" stroke="#8a1010" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- left outer cheek slash -->
+  <path d="M50,82 Q56,79 62,81" stroke="#8a1010" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <!-- right upper eyebrow slash -->
+  <path d="M142,70 Q134,62 122,65" stroke="#8a1010" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M144,78 Q137,72 126,74" stroke="#8a1010" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- right outer cheek slash -->
+  <path d="M150,82 Q144,79 138,81" stroke="#8a1010" stroke-width="2" fill="none" stroke-linecap="round"/>
 
-  <!-- ── EYES (orange-amber, fierce) ── -->
-  <!-- left -->
-  <ellipse cx="80" cy="80" rx="13" ry="12" fill="#0a0806"/>
-  <ellipse cx="80" cy="81" rx="9"  ry="9"  fill="#cc6000"/>
-  <ellipse cx="80" cy="81" rx="4"  ry="7"  fill="#060404"/>
-  <circle  cx="84" cy="77" r="3"   fill="white" fill-opacity="0.80"/>
-  <circle  cx="77" cy="84" r="1.5" fill="white" fill-opacity="0.30"/>
-  <ellipse cx="80" cy="80" rx="13" ry="12" fill="none" stroke="#3a2010" stroke-width="1.5"/>
-  <!-- right -->
-  <ellipse cx="120" cy="80" rx="13" ry="12" fill="#0a0806"/>
-  <ellipse cx="120" cy="81" rx="9"  ry="9"  fill="#cc6000"/>
-  <ellipse cx="120" cy="81" rx="4"  ry="7"  fill="#060404"/>
-  <circle  cx="124" cy="77" r="3"   fill="white" fill-opacity="0.80"/>
-  <circle  cx="117" cy="84" r="1.5" fill="white" fill-opacity="0.30"/>
-  <ellipse cx="120" cy="80" rx="13" ry="12" fill="none" stroke="#3a2010" stroke-width="1.5"/>
+  <!-- ── EYES — orange-amber, fierce ── -->
+  <!-- left eye -->
+  <ellipse cx="78" cy="80" rx="14" ry="13" fill="#0a0806"/>
+  <ellipse cx="78" cy="81" rx="10" ry="10" fill="#cc5e00"/>
+  <ellipse cx="78" cy="81" rx="4"  ry="7"  fill="#060402"/>
+  <circle  cx="83" cy="76" r="3.5" fill="white" fill-opacity="0.82"/>
+  <circle  cx="75" cy="85" r="1.5" fill="white" fill-opacity="0.30"/>
+  <ellipse cx="78" cy="80" rx="14" ry="13" fill="none" stroke="#3a1e08" stroke-width="1.5"/>
+  <!-- right eye -->
+  <ellipse cx="122" cy="80" rx="14" ry="13" fill="#0a0806"/>
+  <ellipse cx="122" cy="81" rx="10" ry="10" fill="#cc5e00"/>
+  <ellipse cx="122" cy="81" rx="4"  ry="7"  fill="#060402"/>
+  <circle  cx="127" cy="76" r="3.5" fill="white" fill-opacity="0.82"/>
+  <circle  cx="119" cy="85" r="1.5" fill="white" fill-opacity="0.30"/>
+  <ellipse cx="122" cy="80" rx="14" ry="13" fill="none" stroke="#3a1e08" stroke-width="1.5"/>
 
-  <!-- ── SNOUT / MUZZLE ── -->
-  <!-- wide protruding muzzle -->
-  <path d="M72,104 Q100,118 128,104 Q124,128 100,134 Q76,128 72,104 Z" fill="#d4ccc4"/>
-  <!-- muzzle centre line -->
-  <line x1="100" y1="104" x2="100" y2="122" stroke="#b0a898" stroke-width="1.5" stroke-opacity="0.60"/>
+  <!-- ── SNOUT / MUZZLE — wide broad beast muzzle ── -->
+  <path d="M68,106 Q100,120 132,106 Q128,130 100,138 Q72,130 68,106 Z" fill="#ccc4bc"/>
+  <!-- muzzle surface shading lines -->
+  <path d="M76,108 Q100,112 124,108" stroke="#aea8a0" stroke-width="1.2" fill="none" stroke-opacity="0.55"/>
+  <path d="M72,118 Q100,124 128,118" stroke="#aea8a0" stroke-width="1.0" fill="none" stroke-opacity="0.48"/>
+  <!-- centre divide line -->
+  <line x1="100" y1="107" x2="100" y2="124" stroke="#a8a09a" stroke-width="1.5" stroke-opacity="0.55"/>
   <!-- nostrils -->
-  <ellipse cx="90"  cy="110" rx="4" ry="3" fill="#9a9088"/>
-  <ellipse cx="110" cy="110" rx="4" ry="3" fill="#9a9088"/>
+  <ellipse cx="88"  cy="113" rx="5" ry="3.5" fill="#8a8480"/>
+  <ellipse cx="112" cy="113" rx="5" ry="3.5" fill="#8a8480"/>
   <!-- upper lip edge -->
-  <path d="M76,116 Q88,120 100,118 Q112,120 124,116" stroke="#9a9088" stroke-width="1.5" fill="none"/>
-  <!-- jaw lower edge -->
-  <path d="M76,116 Q100,132 124,116 Q118,134 100,138 Q82,134 76,116 Z" fill="#c0b8b0"/>
+  <path d="M72,118 Q86,122 100,120 Q114,122 128,118" stroke="#9a9490" stroke-width="1.5" fill="none"/>
+  <!-- lower jaw -->
+  <path d="M72,118 Q100,134 128,118 Q122,138 100,142 Q78,138 72,118 Z" fill="#c0b8b2"/>
+  <!-- jaw chin shield / lower lip bump -->
+  <path d="M88,132 Q100,138 112,132 Q108,142 100,144 Q92,142 88,132 Z" fill="#d0c8c2"/>
 
-  <!-- ── FANGS ── -->
-  <polygon points="88,116 83,136 91,117"  fill="#f4f0ec"/>
-  <polygon points="94,118 90,136 97,119"  fill="#f0ece8" fill-opacity="0.90"/>
-  <polygon points="112,116 117,136 109,117" fill="#f4f0ec"/>
-  <polygon points="106,118 110,136 103,119" fill="#f0ece8" fill-opacity="0.90"/>
-  <!-- fang shadow line -->
-  <line x1="86" y1="116" x2="83" y2="135" stroke="#d0c8c0" stroke-width="0.8"/>
-  <line x1="114" y1="116" x2="117" y2="135" stroke="#d0c8c0" stroke-width="0.8"/>
-
-  <!-- CHIN BEARD TUFT -->
-  <path d="M88,134 Q94,142 100,144 Q106,142 112,134 Q106,148 100,150 Q94,148 88,134 Z" fill="#d0c8be"/>
-  <path d="M94,138 Q100,146 106,138 Q103,150 100,152 Q97,150 94,138 Z" fill="#c0b8ae" fill-opacity="0.60"/>
+  <!-- ── FANGS — 4 prominent downward-pointing ── -->
+  <!-- outer left -->
+  <polygon points="82,118 76,140 86,120"  fill="#f0ecea"/>
+  <!-- inner left -->
+  <polygon points="92,120 88,138 96,122"  fill="#ece8e4"/>
+  <!-- inner right -->
+  <polygon points="108,120 104,138 112,122" fill="#ece8e4"/>
+  <!-- outer right -->
+  <polygon points="118,118 114,140 124,120" fill="#f0ecea"/>
+  <!-- fang shading lines -->
+  <line x1="80"  y1="119" x2="76"  y2="139" stroke="#d0c8c2" stroke-width="0.8"/>
+  <line x1="120" y1="119" x2="124" y2="139" stroke="#d0c8c2" stroke-width="0.8"/>
 
   <!-- ── INFO BAR ── -->
-  <rect x="0" y="220" width="200" height="60" fill="#000000" fill-opacity="0.70"/>
-  <rect x="0" y="220" width="200" height="3" fill="#8090b8" fill-opacity="0.65"/>
-  <rect x="10" y="226" width="54" height="14" fill="#404868" fill-opacity="0.40" rx="7"/>
-  <text x="37" y="236" font-size="8" text-anchor="middle" fill="#a0b0d0" font-family="sans-serif" font-weight="bold">Dragons Rising</text>
-  <text x="100" y="252" font-size="20" font-weight="bold" text-anchor="middle" fill="white" font-family="sans-serif">Zilvar</text>
-  <text x="100" y="270" font-size="11" text-anchor="middle" fill="#a0b0d0" fill-opacity="0.88" font-family="sans-serif">White Warrior</text>
+  <rect x="0" y="222" width="200" height="58" fill="#000000" fill-opacity="0.72"/>
+  <rect x="0" y="222" width="200" height="3" fill="#8090b0" fill-opacity="0.65"/>
+  <rect x="10" y="228" width="58" height="14" fill="#3a445a" fill-opacity="0.42" rx="7"/>
+  <text x="39" y="238" font-size="8" text-anchor="middle" fill="#a0b0cc" font-family="sans-serif" font-weight="bold">Dragons Rising</text>
+  <text x="100" y="253" font-size="20" font-weight="bold" text-anchor="middle" fill="white" font-family="sans-serif">Zilvar</text>
+  <text x="100" y="271" font-size="11" text-anchor="middle" fill="#a0b0cc" fill-opacity="0.88" font-family="sans-serif">White Beast of Destruction</text>
 </svg>
