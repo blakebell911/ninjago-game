@@ -56,9 +56,7 @@ function buildCharacterGrid(containerId, onSelect, excludeId = null) {
 
     chars.forEach(char => {
       const el = document.createElement('div');
-      const isMegaLocked = char.premiumMega && !unlockedMega;
-      const isLocked = (char.premium && !unlockedPremium) || isMegaLocked;
-      el.className = 'char-card' + (isMegaLocked ? ' char-mega-locked' : isLocked ? ' char-locked' : '');
+      el.className = 'char-card';
       el.dataset.id = char.id;
       const elem = getElement(char.element);
 
@@ -66,32 +64,20 @@ function buildCharacterGrid(containerId, onSelect, excludeId = null) {
       el.style.setProperty('--elem-glow', elem.glow);
 
       el.innerHTML = `
-        ${isMegaLocked
-          ? `<div class="char-mega-banner"><span class="char-mega-banner-lock">💎</span><span class="char-mega-banner-text">£2 LEGENDARY</span></div>`
-          : isLocked
-          ? `<div class="char-price-banner"><span class="char-price-banner-lock">🔒</span><span class="char-price-banner-text">£10 PREMIUM</span></div>`
-          : ''}
-        <div class="char-img-wrap" style="${isLocked ? 'border-radius:0 0 0 0;' : ''}">
-          <img class="char-img" src="${char.image}" alt="${char.name}" draggable="false"${isLocked ? ` style="filter:grayscale(0.8) brightness(${isMegaLocked ? '0.35' : '0.45'})"` : ''}>
-          ${isMegaLocked
-            ? `<div class="char-lock-overlay char-mega-overlay"><div class="char-lock-icon">💎</div></div>`
-            : isLocked
-            ? `<div class="char-lock-overlay"><div class="char-lock-icon">🔒</div></div>`
-            : ''}
+        <div class="char-img-wrap">
+          <img class="char-img" src="${char.image}" alt="${char.name}" draggable="false">
         </div>
         <div class="char-name">${char.name}</div>
-        <div class="char-tagline">${isLocked ? (isMegaLocked ? 'Legendary pack' : 'Tap to unlock') : char.tagline}</div>
-        ${isLocked ? '' : `<div class="char-stats">
+        <div class="char-tagline">${char.tagline}</div>
+        <div class="char-stats">
           <span title="HP">❤️ ${char.hp}</span>
           <span title="ATK">⚔️ ${char.attack}</span>
           <span title="DEF">🛡️ ${char.defense}</span>
           <span title="SPD">💨 ${char.speed}</span>
-        </div>`}
+        </div>
       `;
 
       el.addEventListener('click', () => {
-        if (isMegaLocked) { showMegaModal(); return; }
-        if (isLocked) { showUnlockModal(); return; }
         container.querySelectorAll('.char-card').forEach(c => c.classList.remove('selected'));
         el.classList.add('selected');
         onSelect(char);
