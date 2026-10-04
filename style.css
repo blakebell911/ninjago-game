@@ -83,7 +83,7 @@ html, body {
 }
 
 .title-logo h1 {
-  font-family: 'Black Ops One', 'Impact', sans-serif;
+  font-family: 'Kaushan Script', cursive;
   font-size: clamp(3.5rem, 13vw, 7.5rem);
   font-weight: 400;
   letter-spacing: 0.02em;
